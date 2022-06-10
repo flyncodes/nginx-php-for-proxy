@@ -26,11 +26,10 @@ jobs:
   build:
     strategy:
       matrix:
-        image: [ghcr.io/flyncodes/nginx-php-for-azure:php7.4, ghcr.io/flyncodes/nginx-php-for-azure:php8.1]
         version: [7.4, 8.1]
     runs-on: ubuntu-latest
     env:
-      IMAGE: ${{ matrix.image }}
+      IMAGE: ghcr.io/flyncodes/nginx-php-for-azure:${{ matrix.version }}
       PHP_VERSION: ${{ matrix.version }}
     permissions:
       contents: read
