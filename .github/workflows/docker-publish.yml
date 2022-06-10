@@ -85,7 +85,7 @@ jobs:
         with:
           build-args:  |
            PHP_VERSION=${{ matrix.version }}
-           IMAGE=ghcr.io/flyncodes/nginx-php-for-azure:${{ matrix.version }}
+           IMAGE=ghcr.io/flyncodes/nginx-php-for-azure:php${{ matrix.version }}
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
